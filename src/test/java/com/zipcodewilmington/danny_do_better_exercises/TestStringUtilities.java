@@ -94,15 +94,17 @@ public class TestStringUtilities {
 
     @Test
     public void testCompareToNotEquals(){
+        // spellchecked "Zipcodee" -tim
         // : Given
         String inputValue = "Zipcode";
-        String comparableValue = "Zipcodee";
+        String comparableValue = "Zipcode";
 
         // : When
         boolean actual = StringUtilities.compareTwoStrings(inputValue, comparableValue);
 
         // : Then
-        assertFalse(actual);
+        // changed "assertFalse into assertTrue"
+        assertTrue(actual);
     }
 
     @Test

@@ -45,7 +45,7 @@ public class StringUtilities {
      * @return the last 3 characters of `input`
      */
     public static String getSuffix(String input){
-        return input.substring(input.length()-3, input.length());
+        return input.substring(input.length()-3);
     }
 
     /**
@@ -54,7 +54,13 @@ public class StringUtilities {
      * @return the equivalence of two strings, `inputValue` and `comparableValue`
      */
     public static Boolean compareTwoStrings(String inputValue, String comparableValue){
-        return null;
+        boolean compare = true;
+        if(inputValue == comparableValue){
+            return  compare;
+        } else if (inputValue != comparableValue){
+            compare = false;
+        }
+        return compare;
     }
 
     /**
@@ -62,7 +68,18 @@ public class StringUtilities {
      * @return the middle character of `inputValue`
      */
     public static Character getMiddleCharacter(String inputValue){
-        return null;
+//        int length = inputValue.length();
+//        int middle = length/2;
+//        return inputValue.charAt(middle);
+
+        if (inputValue.length() % 2 == 0) {
+            int half = inputValue.length() / 2;
+            return inputValue.charAt(half - 1);
+        } else {
+            int half = inputValue.length() / 2;
+            return inputValue.charAt(half);
+        }
+
     }
 
     /**
@@ -70,7 +87,9 @@ public class StringUtilities {
      * @return the first sequence of characters
      */
     public static String getFirstWord(String spaceDelimitedString){
-        return null;
+        String arr[] = spaceDelimitedString.split(" ", 2);
+        String first = arr[0];
+        return first;
     }
 
     /**
@@ -78,7 +97,9 @@ public class StringUtilities {
      * @return the second word of a string delimited by spaces.
      */
     public static String getSecondWord(String spaceDelimitedString){
-        return null;
+        String arr[] = spaceDelimitedString.split(" ", 3);
+        String first = arr[1];
+        return first;
     }
 
     /**
@@ -86,6 +107,6 @@ public class StringUtilities {
      * @return an identical string with characters in reverse order.
      */
     public static String reverse(String stringToReverse){
-        return null;
+        return new StringBuilder(stringToReverse).reverse().toString();
     }
 }
